@@ -15,8 +15,10 @@ public class imageSwapnScript : MonoBehaviour
     public GameObject image8;
     public GameObject image9;
     public GameObject image10;
+
     public string curImage;
     public int imageCount=1;
+    private List<int> usedImg;
 
     private GameObject curObj;
     void Update()
@@ -72,7 +74,21 @@ public class imageSwapnScript : MonoBehaviour
 
     public void nextImage()
     {
-        imageCount++;
+        bool exit = false;
+        int tempRnd;
+        do {
+            tempRnd = Random.Range(1, 10);
+            foreach (int i in usedImg)
+            {
+                if (tempRnd == i)
+                {
+                    exit = true;
+                }
+            }
+
+        }
+        while (exit == false);
+        imageCount = tempRnd;
         spawnImage();
     }
 
