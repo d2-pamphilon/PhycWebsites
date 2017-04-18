@@ -23,10 +23,7 @@ public class imageSwapnScript : MonoBehaviour
     private GameObject curObj;
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            spawnImage();
-        }
+       
     }
 
     private void spawnImage()
